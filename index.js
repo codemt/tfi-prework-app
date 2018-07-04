@@ -49,6 +49,10 @@ app.post('/api/form',(req,res)=>{
              user: 'mythilmeshram@outlook.com', // generated ethereal user
              pass: 'neverwant2giveup' // generated ethereal password
              //
+         },
+         tls:{
+
+                rejectUnauthorized:false
          }
 
      });
