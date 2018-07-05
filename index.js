@@ -3,6 +3,9 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const app = express();
+const SENDGRID_APIKEY = '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';
+const sgMail = require('@sendgrid/mail');
+sgMail.setApiKey(SENDGRID_APIKEY);
 
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
@@ -37,6 +40,15 @@ app.post('/api/form',(req,res)=>{
             <li> Email : ${req.body.message}</li>
         </ul>
     `;
+    const msg = {
+        to: 'mithilesh.tarkar@gmail.com',
+        from: 'mythilmeshram@gmail.com',
+        subject: 'New Volunteer Request',
+        text: 'You have a new volunteer request',
+        html: output
+      };
+      sgMail.send(msg)
+      .then((msg)=>console.log('Messege Sent by SendGrid'));
 
      // create reusable transporter object using the default SMTP transport
      let transporter = nodemailer.createTransport({
