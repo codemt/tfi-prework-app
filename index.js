@@ -3,7 +3,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const app = express();
-const SENDGRID_APIKEY = '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';
+//const SENDGRID_APIKEY = '';
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(SENDGRID_APIKEY);
 
