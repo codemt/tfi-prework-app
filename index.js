@@ -61,7 +61,7 @@ app.post('/api/form',(req,res)=>{
          secure: false, // true for 465, false for other ports
          auth: {
              user: 'mythilmeshram@outlook.com', // generated ethereal user
-             pass: 'neverwant2giveup' // generated ethereal password
+             pass: '' // generated ethereal password
              //
          },
          tls:{
