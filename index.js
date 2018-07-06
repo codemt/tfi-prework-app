@@ -2,8 +2,9 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
+require('dotenv').config();
 const app = express();
-//const SENDGRID_APIKEY = '';
+const SENDGRID_APIKEY = process.env.SENDGRID_APIKEY;
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(SENDGRID_APIKEY);
 
@@ -22,6 +23,14 @@ app.use(bodyParser.urlencoded({extended:false}))
 app.get('/',(req,res)=>{
 
         res.send('contact');
+        console.log(process.env.SENDGRID_APIKEY);
+    
+
+})
+app.get('/contact',(req,res)=>{
+
+    res.send('contact');
+    console.log(process.env.SENDGRID_APIKEY);
 
 
 })
