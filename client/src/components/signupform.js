@@ -36,9 +36,29 @@ import axios from 'axios';
         console.log(phone);
         console.log(message);
        
-        if(name.length == 0 || email.length == 0 || phone.length == 0 || message.length == 0 )
+        if(name.length == 0 )
         {
-           this.props.alert.show('Please fill the details');
+           this.props.alert.show('Please fill up Name Field');
+        }
+        else if(interest.length == 0 )
+        {
+           this.props.alert.show('Please fill up Interest Field');
+        }
+        else if(email.length == 0 )
+        {
+           this.props.alert.show('Please fill up Email Field');
+        }
+        else if(phone.length == 0 )
+        {
+           this.props.alert.show('Please fill up Phone Field');
+        }
+        else if(message.length == 0 )
+        {
+           this.props.alert.show('Please fill up Message Field');
+        }
+        else if(name.length == 0  || interest.length == 0 || email.length == 0 || phone.length == 0 || message.length == 0 )
+        {
+           this.props.alert.show('Please fill up the required Fields');
         }
         else {
 
